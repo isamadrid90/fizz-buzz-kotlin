@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.21"
+    kotlin("jvm") version "1.6.21"
     id("com.diffplug.spotless") version "5.7.0"
     application
 }
@@ -20,9 +20,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-}
-application {
-    mainClass.set("com.codely.demo.CodelyberKt")
+    testImplementation("io.mockk:mockk:1.12.7")
 }
 
 tasks.withType<KotlinCompile> {
