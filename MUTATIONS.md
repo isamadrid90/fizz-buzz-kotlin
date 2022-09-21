@@ -3,6 +3,7 @@
 Here you could find some mutations made manually just to be able to explain how it should be done,
 I discourage you to do mutation testing this way
 
+Original code
 ```kotlin
 fun execute(first: Int, last: Int) {
     val values = translator.execute(first, last)
@@ -86,6 +87,21 @@ fun `should print all the number between 1 and 100`() {
 }
 ```
 
+Original code
+```kotlin
+ fun execute(start: Int, end: Int): List<String> {
+    val list = mutableListOf<String>()
+    counter.count(start, end).map {
+        when {
+            it.isMultipleOf(15) -> list.add(multipleOf15Translation())
+            it.isMultipleOf(3) -> list.add(multipleOf3Translation())
+            it.isMultipleOf(5) -> list.add(multipleOf5Translation())
+            else -> list.add("$it")
+        }
+    }
+    return list
+}
+```
 
 ## Replaced return value with Collections.emptyList
 ### Mutant
@@ -151,6 +167,13 @@ fun `should return FizzBuzz when number is multiple of 3 and 5`() {
 
     assertEquals(listOf("FizzBuzz"), response)
 }
+```
+Original code
+```
+private fun Int.isMultipleOf(multiple: Int): Boolean {
+    return this % multiple == 0
+}
+
 ```
 
 ## Replaced boolean return with true
