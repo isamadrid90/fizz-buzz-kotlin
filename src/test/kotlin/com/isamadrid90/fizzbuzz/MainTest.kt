@@ -2,6 +2,7 @@ package com.isamadrid90.fizzbuzz
 
 import io.mockk.every
 import io.mockk.mockk
+import io.mockk.verify
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
@@ -25,5 +26,7 @@ class MainTest {
         every { counter.count(any(), any()) } returns range
 
         main.execute(range.first, range.last)
+
+        verify(exactly = range.count()) { printer.execute(any()) }
     }
 }

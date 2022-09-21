@@ -11,5 +11,9 @@ with easy examples, find the requirements below.
 * For numbers which are multiples of both three and five print FizzBuzz instead of the number
 * For numbers which are no multiples of three or five print the number
 
+==================
 
+## Extra
 
+Additional content that you could find in this repo is a file calles MUTATIONS.md with a list of some mutations
+that could be applied over the code and how to kill their mutants.
