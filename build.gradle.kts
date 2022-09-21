@@ -1,8 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.21"
+    kotlin("jvm") version "1.7.0"
     id("com.diffplug.spotless") version "5.7.0"
+    id("info.solidsoft.pitest") version "1.7.0"
     application
 }
 
@@ -18,9 +19,23 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:5.7.0")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-    testImplementation("io.mockk:mockk:1.12.7")
+    testImplementation("io.mockk:mockk:1.12.0")
+}
+
+pitest {
+    setProperty("junit5PluginVersion", "0.12")
+    setProperty("testPlugin", "junit5")
+    setProperty("targetClasses", listOf("com.isamadrid90.*"))
+    setProperty("outputFormats", listOf("HTML"))
+    setProperty("threads", 2)
+    // setProperty("withHistory", true)
+}
+
+application {
+    mainClass.set("com.isamadrid90.fizzbuzz.MainKt")
 }
 
 tasks.withType<KotlinCompile> {
