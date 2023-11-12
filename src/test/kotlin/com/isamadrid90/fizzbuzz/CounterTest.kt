@@ -4,7 +4,6 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class CounterTest {
-
     @Test
     fun `should return numbers from 1 to 100`() {
         val numbers = Counter().count(1, 100)
