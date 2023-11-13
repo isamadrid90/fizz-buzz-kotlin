@@ -1,7 +1,10 @@
 package com.isamadrid90.fizzbuzz
 
 class FizzBuzzTranslator(private val counter: Counter) {
-    fun execute(start: Int, end: Int): List<String> {
+    fun execute(
+        start: Int,
+        end: Int,
+    ): List<String> {
         val list = mutableListOf<String>()
         counter.count(start, end).map {
             when {
