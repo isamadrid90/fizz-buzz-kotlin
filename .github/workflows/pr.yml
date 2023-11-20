@@ -49,4 +49,3 @@ jobs:
           uses: isamadrid90/gradle-pitest-comment-action@improve-regex-msg
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
-
