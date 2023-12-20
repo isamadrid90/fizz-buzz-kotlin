@@ -17,5 +17,3 @@ with easy examples, find the requirements below.
 
 Additional content that you could find in this repo is a file calles MUTATIONS.md with a list of some mutations
 that could be applied over the code and how to kill their mutants.
-
-
