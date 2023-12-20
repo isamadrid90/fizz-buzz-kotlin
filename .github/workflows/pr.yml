@@ -46,6 +46,6 @@ jobs:
             distribution: 'temurin'
 
         - name: Execute PITest
-          uses: isamadrid90/gradle-pitest-comment-action@improve-regex-msg
+          uses: isamadrid90/gradle-pitest-comment-action@v1
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
