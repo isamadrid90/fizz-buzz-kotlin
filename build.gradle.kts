@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.9.20"
-    id("com.diffplug.spotless") version "6.22.0"
+    id("com.diffplug.spotless") version "6.25.0"
     id("info.solidsoft.pitest") version "1.15.0"
     application
 }
@@ -25,12 +25,12 @@ dependencies {
 }
 
 pitest {
-    setProperty("junit5PluginVersion", "1.2.1")
-    setProperty("testPlugin", "junit5")
-    setProperty("targetClasses", listOf("com.isamadrid90.*"))
-    setProperty("outputFormats", listOf("HTML"))
-    setProperty("threads", 2)
-    setProperty("withHistory", false)
+    junit5PluginVersion = "1.2.1"
+    testPlugin = "junit5"
+    targetClasses = listOf("com.isamadrid90.*")
+    outputFormats = listOf("HTML")
+    threads = 2
+    setWithHistory(false)
 }
 
 application {
@@ -51,7 +51,7 @@ tasks.withType<Test> {
 spotless {
     kotlin {
         ktlint()
-            .userData(
+            .editorConfigOverride(
                 mapOf(
                     "insert_final_newline" to "true",
                 ),
